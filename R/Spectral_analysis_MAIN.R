@@ -34,7 +34,10 @@
 	dSampling=1/Fs
 
 	#Move one directory up
-	setwd('..')
+	setwd('..'); MainWD_link=getwd()
+	
+	#Move to dirctory with the data
+	setwd(paste(getwd(),'/Data',sep=''))
 
 	#Create a list of raw data files
 	file<-list.files(path=getwd(),pattern="\\.dat$")  
@@ -188,7 +191,7 @@ PlotSpectra<-function(file){
 ### Aplying the main funtcion ###
 #################################
 
-pdf('Power_spectrum.pdf')
+pdf(paste(MainWD_link,'/Output/Power_spectrum.pdf',sep=''))
 
 for(i in 1:length(file)){
 try(PlotSpectra(file[i]),silent=TRUE)
