@@ -1,1 +1,1 @@
-# Spectral_analysis
+# Spectral analysis
