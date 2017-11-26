@@ -3,7 +3,7 @@
 
 Time_management<-function(data,X){
 
-#Load the original timestamp
+# Load the original timestamp
 	timestamp<-as.character(data$V1)
 
 	options(digits.secs=3)
@@ -18,7 +18,7 @@ Time_management<-function(data,X){
 
 	date<-as.POSIXlt(strftime(Date,'%Y-%m-%d %H:%M:%OS2'),tz="UTC")
 
-###Create continuous timestamp
+# Create continuous timestamp
 	length<-1/dSampling*60*Time_step
 
 	hour=str_sub(paste(0,as.numeric(format(date[1],"%H")),sep=""),-2,-1)
@@ -63,7 +63,7 @@ Time_management<-function(data,X){
 # Order the data frame accroding to continuous timestamp
 	Final_order=filtered[order(as.POSIXlt(filtered[,1])),]
 
-#First and last non-NA index
+# First and last non-NA index
 	First=min(which(!is.na(X)))
 	Last=max(which(!is.na(X)))
 
@@ -72,7 +72,7 @@ Time_management<-function(data,X){
 	Y[1]=X[First]
 	Y[length(Y)]=X[Last]
 
-###Misssing data are linearly interpolated
+# Misssing data are linearly interpolated
 	Y_interpol<-na.approx(Y)
 
 return(Y_interpol)
