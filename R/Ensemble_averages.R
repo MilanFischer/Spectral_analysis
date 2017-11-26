@@ -1,7 +1,6 @@
 Ensemble<-function(N,f_Hz,Nyquist,SD)
 {
 
-N=20	# Number of bins
 X<-log10(f_Hz[2:(which(f_Hz==Nyquist))])	
 Y<-log10(SD[2:(which(f_Hz==Nyquist))])	# Pre-multiplied form
 intervals=seq(from=min(X),to=max(X),length.out=N+1);intervals<-intervals[2:length(intervals)]
