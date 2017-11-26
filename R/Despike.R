@@ -17,7 +17,7 @@ while(fulfilled %in% 'no')
 	Fc1=-5*stda+Xm
 	Fc2= 5*stda+Xm
 
-	# Values which are outside given limits or are missing are assignes as NA
+	# Values which are outside the given limits or are missing are assigned as NA
 	X[X<Fc1|X>Fc2|X %in% NA]=NA
 	
 	M=mean(X,na.rm=TRUE)
@@ -34,5 +34,5 @@ while(fulfilled %in% 'no')
 
 	Y=Time_management(data,X)
 
-	return(Y)}
+return(Y)}
 
