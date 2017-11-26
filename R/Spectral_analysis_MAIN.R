@@ -28,6 +28,9 @@
 	#Sampling frequency
 	Fs=10
 
+	#Number of bins for ensemble spectra averaging
+	N=20
+
 	#Time step (minutes)
 	Time_step=30
 
@@ -189,7 +192,7 @@ PlotSpectra<-function(file){
 }
 
 #################################
-### Aplying the main funtcion ###
+### Aplying the main function ###
 #################################
 
 pdf(paste(MainWD_link,'/Output/Power_spectrum.pdf',sep=''))
