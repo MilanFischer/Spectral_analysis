@@ -40,7 +40,7 @@
 	#Move one directory up
 	setwd('..'); MainWD_link=getwd()
 	
-	#Move to dirctory with the data
+	#Move to directory with the data
 	setwd(paste(getwd(),'/Data',sep=''))
 
 	#Create a list of raw data files
